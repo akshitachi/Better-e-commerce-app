@@ -50,12 +50,10 @@ class HomeScreen extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
                 Positioned(
-                  // The Positioned widget is used to position the text inside the Stack widget
-                  bottom: 10,
-                  right: 10,
-                  top: 10,
-                  left: 10,
-
+                  bottom: 0,
+                  right: 0,
+                  top: 0,
+                  left: 0,
                   child: Center(
                     child: Text(
                       'Grab the best deals',
@@ -105,9 +103,105 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
+            Row(
+              children: [
+                _buildStack(
+                  'Rectangle 12',
+                  'Fruits',
+                  'Fresh fruits and vegetables availiable',
+                  '40',
+                ),
+                _buildStack(
+                  'Rectangle 14',
+                  'Shoes',
+                  'Branded shoes and flips availiable',
+                  '400',
+                ),
+                _buildStack(
+                  'Rectangle 16',
+                  'Electronic appliances',
+                  'Laptops, mobile phones & more..',
+                  '1500',
+                ),
+              ],
+            ),
           ],
         ),
       ),
+    );
+  }
+
+  Stack _buildStack(
+    String assetName,
+    String category,
+    String description,
+    String itemcount,
+  ) {
+    return Stack(
+      children: [
+        Image.asset(
+          'assets/images/$assetName.png',
+        ),
+        Positioned(
+          top: 20,
+          right: 45,
+          child: Text(
+            category,
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
+          ),
+        ),
+        Positioned(
+          top: 0,
+          bottom: 30,
+          right: 0,
+          left: 0,
+          child: Center(
+            child: Text(
+              description,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 12,
+              ),
+            ),
+          ),
+        ),
+        Positioned(
+          top: 50,
+          bottom: 0,
+          left: 0,
+          right: 0,
+          child: Center(
+            child: Text(
+              itemcount,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ),
+        Positioned(
+          top: 120,
+          bottom: 0,
+          left: 0,
+          right: 0,
+          child: Center(
+            child: Text(
+              'items',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 14,
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
