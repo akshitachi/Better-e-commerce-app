@@ -23,6 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  bottom_navy_bar: ^5.6.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -53,7 +54,14 @@ flutter:
     - assets/images/Rectangle 15.png
     - assets/images/Rectangle 16.png
     - assets/images/Rectangle 17.png
-    
+    - assets/images/discount.png
+    - assets/images/Icon feather-search.png
+    - assets/images/Icon feather-home.png
+    - assets/images/Icon feather-shopping-bag.png
+    - assets/images/Icon feather-shopping-cart.png
+    - assets/images/Icon feather-user.png
+    - assets/images/Icon material-filter-list.png
+    - assets/images/credit_card.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
