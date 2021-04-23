@@ -1,3 +1,4 @@
+import 'package:e_commerce2/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 
@@ -26,14 +27,30 @@ class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: SizedBox.expand(
+        child: PageView(
+          physics: NeverScrollableScrollPhysics(),
+          controller: _pageController,
+          onPageChanged: (index) {
+            setState(
+              () => _currentIndex = index,
+            );
+          },
+          children: <Widget>[
+            HomeScreen(),
+          ],
+        ),
+      ),
       bottomNavigationBar: BottomNavyBar(
         selectedIndex: _currentIndex,
         showElevation: true,
         itemCornerRadius: 24,
         curve: Curves.easeIn,
-        onItemSelected: (index) => setState(
-          () => _currentIndex = index,
-        ),
+        animationDuration: Duration(milliseconds: 500),
+        onItemSelected: (index) {
+          setState(() => _currentIndex = index);
+          _pageController.jumpToPage(index);
+        },
         items: <BottomNavyBarItem>[
           BottomNavyBarItem(
             icon: Image.asset('assets/images/Icon feather-home.png'),
