@@ -103,25 +103,71 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
+            SizedBox(
+              width: double.infinity,
+              height: MediaQuery.of(context).size.height / 3.8,
+              child: ListView(
+                physics: BouncingScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                children: [
+                  _buildStack(
+                    'Rectangle 12',
+                    'Fruits',
+                    'Fresh fruits and vegetables availiable',
+                    '40',
+                    20,
+                  ),
+                  _buildStack(
+                    'Rectangle 14',
+                    'Shoes',
+                    'Branded shoes and flips availiable',
+                    '400',
+                    20,
+                  ),
+                  _buildStack(
+                    'Rectangle 16',
+                    'Electronic appliances',
+                    'Laptops, mobile phones & more..',
+                    '1500',
+                    13,
+                  ),
+                ],
+              ),
+            ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                _buildStack(
-                  'Rectangle 12',
-                  'Fruits',
-                  'Fresh fruits and vegetables availiable',
-                  '40',
+                Text(
+                  'Today\'s Deals',
+                  style: TextStyle(
+                    fontSize: 16,
+                  ),
                 ),
-                _buildStack(
-                  'Rectangle 14',
-                  'Shoes',
-                  'Branded shoes and flips availiable',
-                  '400',
-                ),
-                _buildStack(
-                  'Rectangle 16',
-                  'Electronic appliances',
-                  'Laptops, mobile phones & more..',
-                  '1500',
+                FlatButton(
+                  onPressed: () {},
+                  child: RichText(
+                    text: TextSpan(
+                      style: Theme.of(context).textTheme.body1,
+                      children: [
+                        TextSpan(
+                          text: 'View Items',
+                          style: TextStyle(
+                            fontSize: 12,
+                          ),
+                        ),
+                        WidgetSpan(
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 1.0),
+                            child: Icon(
+                              Icons.arrow_forward,
+                              size: 15,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -136,8 +182,10 @@ class HomeScreen extends StatelessWidget {
     String category,
     String description,
     String itemcount,
+    double size,
   ) {
     return Stack(
+      alignment: Alignment.topCenter,
       children: [
         Image.asset(
           'assets/images/$assetName.png',
@@ -145,12 +193,15 @@ class HomeScreen extends StatelessWidget {
         Positioned(
           top: 20,
           right: 45,
-          child: Text(
-            category,
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
+          left: 30,
+          child: Center(
+            child: Text(
+              category,
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: size,
+              ),
             ),
           ),
         ),
@@ -160,12 +211,15 @@ class HomeScreen extends StatelessWidget {
           right: 0,
           left: 0,
           child: Center(
-            child: Text(
-              description,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 12,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                description,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 11,
+                ),
               ),
             ),
           ),
@@ -187,7 +241,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: 120,
+          top: 100,
           bottom: 0,
           left: 0,
           right: 0,
