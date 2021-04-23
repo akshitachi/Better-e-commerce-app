@@ -63,6 +63,8 @@ flutter:
     - assets/images/Icon material-filter-list.png
     - assets/images/credit_card.jpg
     - assets/images/Rectangle 18.png
+    - assets/images/Rectangle 550.png
+    - assets/images/Group 323.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

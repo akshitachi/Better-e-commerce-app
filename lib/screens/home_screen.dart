@@ -1,6 +1,6 @@
+import 'package:e_commerce2/widgets/app_drawer.dart';
 import 'package:e_commerce2/widgets/name_card.dart';
 
-import '../widgets/nav_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,11 +8,12 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        // appBar: AppBar(
-        //   title: Text(
-        //     'Home Page',
-        //   ),
-        // ),
+        appBar: AppBar(
+          title: Text(
+            'hsnakxas',
+          ),
+        ),
+        drawer: AppDrawer(),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: SingleChildScrollView(
