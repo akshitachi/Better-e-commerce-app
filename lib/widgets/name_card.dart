@@ -12,7 +12,7 @@ class _NameCardState extends State<NameCard> {
     return Container(
       height: MediaQuery.of(context).size.height * 0.28,
       width: double.infinity,
-      decoration:  BoxDecoration(
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(35),
         ),

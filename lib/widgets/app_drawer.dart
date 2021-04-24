@@ -57,6 +57,7 @@ class AppDrawer extends StatelessWidget {
             Menu(
               assetName: 'bell',
               label: 'NOTIFICATIONS',
+              navigator: '/notification-screen',
             ),
             Menu(
               assetName: 'Path 148',
@@ -88,6 +89,7 @@ class AppDrawer extends StatelessWidget {
             ),
             Menu(
               label: 'LOG OUT',
+              navigator: '/logout',
             ),
             Menu(
               label: 'FEEDBACK',

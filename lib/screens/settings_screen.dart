@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
-class SettingsScreen extends StatelessWidget {
+class SettingsScreen extends StatefulWidget {
+  @override
+  _SettingsScreenState createState() => _SettingsScreenState();
+}
+
+class _SettingsScreenState extends State<SettingsScreen> {
   final String routeName = '/settings';
+  bool _switchValue = true;
+  bool _switchValueApp = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,11 +55,9 @@ class SettingsScreen extends StatelessWidget {
               ),
               buildName(
                 'Edit profile',
-                'is-greater-than-mathematical-sign',
               ),
               buildName(
                 'Change Password',
-                'is-greater-than-mathematical-sign',
               ),
               buildRow(
                 'Icon ionic-md-notifications',
@@ -63,6 +68,95 @@ class SettingsScreen extends StatelessWidget {
                 thickness: 1,
                 color: Color(0xffBCBCBC),
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  FlatButton(
+                    onPressed: () {},
+                    child: Text(
+                      'notifications',
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                  Switch(
+                    activeColor: Colors.green,
+                    inactiveThumbColor: Colors.red,
+                    value: _switchValue,
+                    onChanged: (value) {
+                      setState(() {
+                        _switchValue = value;
+                      });
+                    },
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  FlatButton(
+                    onPressed: () {},
+                    child: Text(
+                      'App notifications',
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                  Switch(
+                    activeColor: Colors.green,
+                    inactiveThumbColor: Colors.red,
+                    value: _switchValueApp,
+                    onChanged: (value) {
+                      setState(() {
+                        _switchValueApp = value;
+                      });
+                    },
+                  ),
+                ],
+              ),
+              buildRow(
+                'Icon material-more',
+                'More',
+              ),
+              Divider(
+                height: 1,
+                thickness: 1,
+                color: Color(0xffBCBCBC),
+              ),
+              buildName(
+                'Language',
+              ),
+              buildName(
+                'Country',
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
+              ),
+              Center(
+                child: Container(
+                  width: double.infinity,
+                  height: 50,
+                  child: RaisedButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Edit Profile',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.normal,
+                      ),
+                    ),
+                    color: Colors.blue,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -70,7 +164,7 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
-  Padding buildName(String name, String assetName) {
+  Padding buildName(String name) {
     return Padding(
       padding: const EdgeInsets.only(
         top: 8.0,
@@ -93,7 +187,7 @@ class SettingsScreen extends StatelessWidget {
             icon: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Image.asset(
-                'assets/images/$assetName.png',
+                'assets/images/is-greater-than-mathematical-sign.png',
                 color: Colors.grey,
               ),
             ),
