@@ -1,6 +1,8 @@
-import 'package:e_commerce2/screens/first_page.dart';
-import 'package:e_commerce2/screens/logout_screen.dart';
-import 'package:e_commerce2/screens/notification_screen.dart';
+import 'package:e_commerce2/screens/feedback_screen.dart';
+
+import './screens/first_page.dart';
+import './screens/logout_screen.dart';
+import './screens/notification_screen.dart';
 import './screens/settings_screen.dart';
 import './screens/privacy_policy_page.dart';
 import './widgets/nav_bar.dart';
@@ -28,6 +30,8 @@ class MyApp extends StatelessWidget {
         '/settings': (ctx) => SettingsScreen(),
         '/logout': (ctx) => LogOutScreen(),
         '/notification-screen': (ctx) => NotificationScreen(),
+        '/home-screen': (ctx) => HomeScreen(),
+        '/feedback-screen': (ctx) => FeedBackScreen(),
       },
     );
   }

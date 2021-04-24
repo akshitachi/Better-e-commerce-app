@@ -45,6 +45,7 @@ class AppDrawer extends StatelessWidget {
             Menu(
               assetName: 'Path 102',
               label: 'HOME',
+              navigator: '/home-screen',
             ),
             Menu(
               assetName: 'Path 103',
@@ -93,6 +94,7 @@ class AppDrawer extends StatelessWidget {
             ),
             Menu(
               label: 'FEEDBACK',
+              navigator: '/feedback-screen',
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.03,

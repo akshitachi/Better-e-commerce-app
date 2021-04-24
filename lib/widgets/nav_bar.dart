@@ -8,6 +8,7 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
+  final String routeName='/home-screen';
   int _currentIndex = 0;
   PageController _pageController;
   @override
