@@ -9,6 +9,7 @@ class FeedBackScreen extends StatefulWidget {
 
 class _FeedBackScreenState extends State<FeedBackScreen> {
   final String routeName = '/feedback-screen';
+  bool _ifPressed = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,82 +29,98 @@ class _FeedBackScreenState extends State<FeedBackScreen> {
       ),
       body: Padding(
         padding: EdgeInsets.all(25.0),
-        child: Column(
-          children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.04,
-            ),
-            Center(
-              child: Text(
-                'Your feedback matters to us!',
-                style: TextStyle(
-                  color: Colors.grey,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.04,
+              ),
+              Center(
+                child: Text(
+                  'Your feedback matters to us!',
+                  style: TextStyle(
+                    color: Colors.grey,
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.05,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
-                  'assets/images/Icon ionic-md-sad.png',
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.05,
-                ),
-                Image.asset(
-                  'assets/images/Icon ionic-md-happy.png',
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.05,
-                ),
-                Image.asset(
-                  'assets/images/Icon feather-smile.png',
-                ),
-              ],
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.05,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                maxLines: 5,
-                keyboardType: TextInputType.multiline,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.05,
               ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.05,
-            ),
-            Center(
-              child: Container(
-                width: double.infinity,
-                height: 50,
-                child: RaisedButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Text(
-                    'Submit',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.normal,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    color: _ifPressed ? Colors.red : Colors.grey,
+                    onPressed: () {
+                      setState(() {
+                        _ifPressed = !_ifPressed;
+                      });
+                    },
+                    icon: Image.asset(
+                      'assets/images/Icon ionic-md-sad.png',
                     ),
                   ),
-                  color: Colors.blue,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.05,
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Image.asset(
+                      'assets/images/Icon ionic-md-happy.png',
+                    ),
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.05,
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Image.asset(
+                      'assets/images/Icon feather-smile.png',
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.05,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  maxLines: 5,
+                  keyboardType: TextInputType.multiline,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
                   ),
                 ),
               ),
-            ),
-          ],
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.05,
+              ),
+              Center(
+                child: Container(
+                  width: double.infinity,
+                  height: 50,
+                  child: RaisedButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text(
+                      'Submit',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.normal,
+                      ),
+                    ),
+                    color: Colors.blue,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
