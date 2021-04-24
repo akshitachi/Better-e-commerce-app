@@ -10,6 +10,9 @@ class FeedBackScreen extends StatefulWidget {
 class _FeedBackScreenState extends State<FeedBackScreen> {
   final String routeName = '/feedback-screen';
   bool _ifPressed = false;
+  bool _ifPressed1 = false;
+
+  bool _ifPressed2 = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +53,6 @@ class _FeedBackScreenState extends State<FeedBackScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   IconButton(
-                    color: _ifPressed ? Colors.red : Colors.grey,
                     onPressed: () {
                       setState(() {
                         _ifPressed = !_ifPressed;
@@ -58,24 +60,41 @@ class _FeedBackScreenState extends State<FeedBackScreen> {
                     },
                     icon: Image.asset(
                       'assets/images/Icon ionic-md-sad.png',
+                      color: (_ifPressed && !_ifPressed1 && !_ifPressed2)
+                          ? Colors.red
+                          : Colors.grey,
                     ),
                   ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.05,
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        _ifPressed1 = !_ifPressed1;
+                      });
+                    },
                     icon: Image.asset(
                       'assets/images/Icon ionic-md-happy.png',
+                      color: (_ifPressed1 && !_ifPressed && !_ifPressed2)
+                          ? Colors.red
+                          : Colors.grey,
                     ),
                   ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.05,
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        _ifPressed2 = !_ifPressed2;
+                      });
+                    },
                     icon: Image.asset(
                       'assets/images/Icon feather-smile.png',
+                      color: (_ifPressed2 && !_ifPressed1 && !_ifPressed)
+                          ? Colors.red
+                          : Colors.grey,
                     ),
                   ),
                 ],

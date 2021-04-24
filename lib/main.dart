@@ -1,3 +1,4 @@
+import 'package:e_commerce2/screens/cart_screen.dart';
 import 'package:e_commerce2/screens/feedback_screen.dart';
 
 import './screens/first_page.dart';
@@ -25,13 +26,15 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepPurple,
       ),
       home: NavBar(),
+      debugShowCheckedModeBanner: false,
       routes: {
         '/privacy-policy': (ctx) => PrivacyPolicy(),
         '/settings': (ctx) => SettingsScreen(),
         '/logout': (ctx) => LogOutScreen(),
         '/notification-screen': (ctx) => NotificationScreen(),
-        '/home-screen': (ctx) => HomeScreen(),
+        '/home-screen': (ctx) => NavBar(),
         '/feedback-screen': (ctx) => FeedBackScreen(),
+        '/cart-screen': (ctx) => CartScreen(),
       },
     );
   }

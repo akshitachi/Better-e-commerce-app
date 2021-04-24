@@ -49,7 +49,9 @@ class _NameCardState extends State<NameCard> {
                   Icons.shopping_cart,
                   color: Colors.white,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/cart-screen');
+                },
               ),
               IconButton(
                 icon: Icon(
@@ -92,7 +94,7 @@ class _NameCardState extends State<NameCard> {
                 ),
                 hintText: 'search over 1500 products',
                 hintStyle: TextStyle(
-                  color: Colors.black,
+                  color: Colors.grey,
                 ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30),
