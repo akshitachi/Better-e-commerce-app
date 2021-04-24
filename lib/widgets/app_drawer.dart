@@ -40,31 +40,85 @@ class AppDrawer extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 23.0,
+              height: 30.0,
             ),
             Menu(
-              icon: Icons.ac_unit,
-              label: 'Home',
+              assetName: 'Path 102',
+              label: 'HOME',
             ),
             Menu(
-              icon: Icons.ac_unit,
-              label: 'View Medical Data',
+              assetName: 'Path 103',
+              label: 'EXPLORE',
             ),
             Menu(
-              icon: Icons.ac_unit,
-              label: 'Add Medical Data',
+              assetName: 'Path 50',
+              label: 'WALLET',
             ),
             Menu(
-              icon: Icons.ac_unit,
-              label: 'Tip of the Day',
+              assetName: 'bell',
+              label: 'NOTIFICATIONS',
             ),
             Menu(
-              icon: Icons.ac_unit,
-              label: 'Contact Us',
+              assetName: 'Path 148',
+              label: 'YOUR ORDERS',
             ),
             Menu(
-              icon: Icons.ac_unit,
-              label: 'Tutorials',
+              assetName: 'Icon feather-shopping-cart',
+              label: 'CART',
+            ),
+            Menu(
+              assetName: 'pin',
+              label: 'PRIVACY POLICY',
+              navigator: '/privacy-policy',
+            ),
+            Menu(
+              assetName: 'Path 104',
+              label: 'SETTINGS',
+              navigator: '/settings',
+            ),
+            Menu(
+              assetName: 'search',
+              label: 'SEARCH',
+            ),
+            Menu(
+              label: 'ORDER TRACKING',
+            ),
+            Menu(
+              label: 'CHANGE PASSWORD',
+            ),
+            Menu(
+              label: 'LOG OUT',
+            ),
+            Menu(
+              label: 'FEEDBACK',
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.03,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Row(
+                children: [
+                  IconButton(
+                    icon: Image.asset(
+                      'assets/images/Path 1.png',
+                    ),
+                    onPressed: () {},
+                  ),
+                  IconButton(
+                    icon: Image.asset(
+                      'assets/images/Path 2.png',
+                    ),
+                    onPressed: () {},
+                  ),
+                  IconButton(
+                    icon: Image.asset(
+                      'assets/images/Path 3.png',
+                    ),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
             ),
           ],
         ),
@@ -74,24 +128,31 @@ class AppDrawer extends StatelessWidget {
 }
 
 class Menu extends StatelessWidget {
-  Menu({@override this.icon, @override this.label});
+  Menu({
+    this.assetName,
+    @override this.label,
+    this.navigator,
+  });
 
-  final IconData icon;
-
+  final String assetName;
+  final String navigator;
   final String label;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: () {
+        Navigator.of(context).pushNamed(navigator);
+      },
       leading: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, color: Color(0xFF89CFF0)),
-          // Icon(FontAwesomeIcons.home, color: Color(0xFF89CFF0)),
-          VerticalDivider(
-            indent: 20,
-            endIndent: 20,
-          ),
+          ImageIcon(
+            AssetImage(
+              'assets/images/$assetName.png',
+            ),
+            color: Color(0xff0A0708),
+          )
         ],
       ),
       title: Text(label),

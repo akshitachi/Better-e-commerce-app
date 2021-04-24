@@ -1,3 +1,4 @@
+import 'package:e_commerce2/widgets/app_drawer.dart';
 import 'package:flutter/material.dart';
 
 class NameCard extends StatefulWidget {
@@ -11,7 +12,7 @@ class _NameCardState extends State<NameCard> {
     return Container(
       height: MediaQuery.of(context).size.height * 0.28,
       width: double.infinity,
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(35),
         ),
@@ -55,7 +56,9 @@ class _NameCardState extends State<NameCard> {
                   Icons.menu,
                   color: Colors.white,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
               ),
             ],
           ),

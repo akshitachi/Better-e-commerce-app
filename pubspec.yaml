@@ -65,6 +65,21 @@ flutter:
     - assets/images/Rectangle 18.png
     - assets/images/Rectangle 550.png
     - assets/images/Group 323.png
+    - assets/images/Path 1.png
+    - assets/images/Path 2.png
+    - assets/images/Path 3.png
+    - assets/images/Path 50.png
+    - assets/images/Path 102.png
+    - assets/images/Path 103.png
+    - assets/images/Path 104.png
+    - assets/images/Path 148.png
+    - assets/images/bell.png
+    - assets/images/pin.png
+    - assets/images/search.png
+    - assets/images/Icon material-person.png
+    - assets/images/Icon material-more.png
+    - assets/images/Icon ionic-md-notifications.png
+    - assets/images/is-greater-than-mathematical-sign.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

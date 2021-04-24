@@ -1,5 +1,7 @@
 import 'package:e_commerce2/screens/first_page.dart';
-import 'package:e_commerce2/widgets/nav_bar.dart';
+import './screens/settings_screen.dart';
+import './screens/privacy_policy_page.dart';
+import './widgets/nav_bar.dart';
 
 import './screens/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +21,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepPurple,
       ),
       home: NavBar(),
+      routes: {
+        '/privacy-policy': (ctx) => PrivacyPolicy(),
+        '/settings': (ctx) => SettingsScreen(),
+      },
     );
   }
 }

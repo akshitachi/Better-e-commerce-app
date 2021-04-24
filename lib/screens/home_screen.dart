@@ -8,11 +8,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'hsnakxas',
-          ),
-        ),
         drawer: AppDrawer(),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
