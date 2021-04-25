@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "503127890970",
+    "firebase_url": "https://e-commerce-310af-default-rtdb.firebaseio.com",
+    "project_id": "e-commerce-310af",
+    "storage_bucket": "e-commerce-310af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:503127890970:android:feacce9247a1d0e51005a3",
+        "android_client_info": {
+          "package_name": "com.akshil.vendor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "503127890970-bsi18u8uf4ju9ve40mulfj3b89pa8jb9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-_vsCHDj5R1OkxVpfKOx_0tL6FA6fz_c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "503127890970-bsi18u8uf4ju9ve40mulfj3b89pa8jb9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

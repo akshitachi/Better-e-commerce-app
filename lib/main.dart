@@ -1,3 +1,4 @@
+import 'package:e_commerce2/screens/auth_screen.dart';
 import 'package:e_commerce2/screens/cart_screen.dart';
 import 'package:e_commerce2/screens/feedback_screen.dart';
 
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: NavBar(),
+      home: AuthScreen(),
       debugShowCheckedModeBanner: false,
       routes: {
         '/privacy-policy': (ctx) => PrivacyPolicy(),
