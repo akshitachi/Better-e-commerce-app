@@ -1,21 +1,15 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
-class AuthForm extends StatefulWidget {
-  AuthForm(this.submitFn);
-  final Void Function(
-    String email,
-    String password,
-    BuildContext ctx,
-  ) submitFn;
+class SignUp extends StatefulWidget {
+  SignUp({Key key}) : super(key: key);
+
   @override
-  _AuthFormState createState() => _AuthFormState();
+  _SignUpState createState() => _SignUpState();
 }
 
-class _AuthFormState extends State<AuthForm> {
+class _SignUpState extends State<SignUp> {
   final _formKey = GlobalKey<FormState>();
-  var _isLogin = true;
+
   String _userEmail = '';
   String _userPassword = '';
   void _trySubmit() {
@@ -23,11 +17,6 @@ class _AuthFormState extends State<AuthForm> {
     FocusScope.of(context).unfocus();
     if (isValid) {
       _formKey.currentState.save();
-      widget.submitFn(
-        _userEmail.trim(),
-        _userPassword.trim(),
-        context,
-      );
     }
   }
 
@@ -145,31 +134,29 @@ class _AuthFormState extends State<AuthForm> {
                         },
                       ),
                     ),
-                    if (!_isLogin)
-                      Padding(
-                        padding: const EdgeInsets.all(15),
-                        child: Text(
-                          'Re-enter password',
-                          style: TextStyle(
-                            fontSize: 10,
-                            color: Color(0xff9094F5),
+                    Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: Text(
+                        'Re-enter password',
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Color(0xff9094F5),
+                        ),
+                      ),
+                    ),
+                    Material(
+                      borderRadius: BorderRadius.circular(30),
+                      elevation: 5,
+                      shadowColor: Colors.grey,
+                      child: TextFormField(
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide.none,
                           ),
                         ),
                       ),
-                    if (!_isLogin)
-                      Material(
-                        borderRadius: BorderRadius.circular(30),
-                        elevation: 5,
-                        shadowColor: Colors.grey,
-                        child: TextFormField(
-                          obscureText: true,
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                            ),
-                          ),
-                        ),
-                      ),
+                    ),
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.05,
                     ),
@@ -180,7 +167,7 @@ class _AuthFormState extends State<AuthForm> {
                         child: RaisedButton(
                           onPressed: _trySubmit,
                           child: Text(
-                            'Signin',
+                            'SignUp',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 20,
@@ -264,7 +251,7 @@ class _AuthFormState extends State<AuthForm> {
                         child: RaisedButton(
                           onPressed: () {},
                           child: Text(
-                            'Signin',
+                            'SignUp',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 20,

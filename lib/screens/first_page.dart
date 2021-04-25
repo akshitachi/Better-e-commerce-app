@@ -41,7 +41,7 @@ class FirstScreen extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 300,
+            top: 500,
             left: 50,
             child: Column(
               children: [
@@ -52,7 +52,10 @@ class FirstScreen extends StatelessWidget {
                       width: 200,
                       height: 50,
                       child: RaisedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context)
+                              .pushReplacementNamed('/sign-up');
+                        },
                         child: Text(
                           'SignUp',
                           style: TextStyle(
@@ -75,7 +78,10 @@ class FirstScreen extends StatelessWidget {
                       width: 200,
                       height: 50,
                       child: RaisedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context)
+                              .pushReplacementNamed('/sign-in');
+                        },
                         child: Text(
                           'SignIn',
                           style: TextStyle(

@@ -1,6 +1,7 @@
 import 'package:e_commerce2/screens/auth_screen.dart';
 import 'package:e_commerce2/screens/cart_screen.dart';
 import 'package:e_commerce2/screens/feedback_screen.dart';
+import 'package:e_commerce2/screens/signup_screen.dart';
 
 import './screens/first_page.dart';
 import './screens/logout_screen.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: AuthScreen(),
+      home: FirstScreen(),
       debugShowCheckedModeBanner: false,
       routes: {
         '/privacy-policy': (ctx) => PrivacyPolicy(),
@@ -36,6 +37,8 @@ class MyApp extends StatelessWidget {
         '/home-screen': (ctx) => NavBar(),
         '/feedback-screen': (ctx) => FeedBackScreen(),
         '/cart-screen': (ctx) => CartScreen(),
+        '/sign-up': (ctx) => SignUpScreen(),
+        '/sign-in': (ctx) => AuthScreen(),
       },
     );
   }
