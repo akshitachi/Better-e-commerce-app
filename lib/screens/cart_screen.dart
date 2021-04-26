@@ -85,7 +85,7 @@ class _CartScreenState extends State<CartScreen> {
                   child: RaisedButton(
                     onPressed: () {},
                     child: Text(
-                      'Center',
+                      'Check out',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 20,

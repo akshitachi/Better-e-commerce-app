@@ -39,6 +39,7 @@ class MyApp extends StatelessWidget {
         '/cart-screen': (ctx) => CartScreen(),
         '/sign-up': (ctx) => SignUpScreen(),
         '/sign-in': (ctx) => AuthScreen(),
+        '/after-signup': (ctx) => AfterSignUp(),
       },
     );
   }

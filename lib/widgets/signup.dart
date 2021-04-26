@@ -28,6 +28,7 @@ class _SignUpState extends State<SignUp> {
         _userPassword.trim(),
         context,
       );
+      Navigator.of(context).pushReplacementNamed('/after-signup');
     }
   }
 
