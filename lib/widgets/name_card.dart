@@ -1,4 +1,3 @@
-import 'package:e_commerce2/widgets/app_drawer.dart';
 import 'package:flutter/material.dart';
 
 class NameCard extends StatefulWidget {
@@ -58,9 +57,7 @@ class _NameCardState extends State<NameCard> {
                   Icons.menu,
                   color: Colors.white,
                 ),
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                },
+                onPressed: () {},
               ),
             ],
           ),

@@ -94,6 +94,7 @@ class AppDrawer extends StatelessWidget {
             ),
             Menu(
               label: 'ORDER TRACKING',
+              navigator: '/order-tracking',
             ),
             Menu(
               label: 'CHANGE PASSWORD',
