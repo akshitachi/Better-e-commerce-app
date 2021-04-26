@@ -38,12 +38,12 @@ class _CartItemState extends State<CartItem> {
                     style: TextStyle(color: Colors.white),
                     iconEnabledColor: Colors.black,
                     items: <String>[
-                      '100grms',
-                      '200grms',
-                      '400grms',
-                      '500grms',
-                      '850grms',
-                      '1000grms',
+                      // '100grms',
+                      // '200grms',
+                      // '400grms',
+                      // '500grms',
+                      // '850grms',
+                      // '1000grms',
                     ].map<DropdownMenuItem<String>>((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
@@ -76,12 +76,12 @@ class _CartItemState extends State<CartItem> {
                     style: TextStyle(color: Colors.white),
                     iconEnabledColor: Colors.black,
                     items: <String>[
-                      'Qty: 1',
-                      'Qty: 2',
-                      'Qty: 3',
-                      'Qty: 4',
-                      'Qty: 5',
-                      'Qty: 6',
+                      // 'Qty: 1',
+                      // 'Qty: 2',
+                      // 'Qty: 3',
+                      // 'Qty: 4',
+                      // 'Qty: 5',
+                      // 'Qty: 6',
                     ].map<DropdownMenuItem<String>>((String value) {
                       return DropdownMenuItem<String>(
                         value: value,

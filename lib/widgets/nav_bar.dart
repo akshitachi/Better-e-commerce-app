@@ -1,4 +1,5 @@
 import 'package:e_commerce2/screens/home_screen.dart';
+import 'package:e_commerce2/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 
@@ -8,7 +9,7 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
-  final String routeName='/home-screen';
+  final String routeName = '/home-screen';
   int _currentIndex = 0;
   PageController _pageController;
   @override
@@ -39,6 +40,10 @@ class _NavBarState extends State<NavBar> {
           },
           children: <Widget>[
             HomeScreen(),
+            HomeScreen(),
+            HomeScreen(),
+            HomeScreen(),
+            ProfileScreen(),
           ],
         ),
       ),

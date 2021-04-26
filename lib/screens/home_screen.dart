@@ -82,6 +82,7 @@ class HomeScreen extends StatelessWidget {
                   width: double.infinity,
                   height: MediaQuery.of(context).size.height / 3,
                   child: ListView(
+                    
                     physics: BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     children: [

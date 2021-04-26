@@ -61,6 +61,7 @@ class AppDrawer extends StatelessWidget {
             Menu(
               assetName: 'Path 50',
               label: 'WALLET',
+              navigator: '/wallet-screen',
             ),
             Menu(
               assetName: 'bell',
