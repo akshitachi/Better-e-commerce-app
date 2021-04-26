@@ -81,33 +81,25 @@ class _NameCardState extends State<NameCard> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(8.0),
-            child: TextFormField(
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.white,
-                prefixIcon: Icon(
-                  Icons.search,
-                ),
-                hintText: 'search over 1500 products',
-                hintStyle: TextStyle(
-                  color: Colors.grey,
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30),
-                  borderSide: BorderSide(
-                    color: Colors.white,
+            padding: EdgeInsets.all(18.0),
+            child: Container(
+              width: double.infinity,
+              height: 50,
+              child: RaisedButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/search-screen');
+                },
+                child: Text(
+                  '\u{1F50D}  search over 1500 products',
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 17,
+                    fontWeight: FontWeight.normal,
                   ),
                 ),
-                enabledBorder: OutlineInputBorder(
+                color: Colors.white,
+                shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
-                  borderSide: BorderSide(
-                    color: Colors.white,
-                  ),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: new BorderSide(color: Colors.white),
-                  borderRadius: new BorderRadius.circular(25.7),
                 ),
               ),
             ),
