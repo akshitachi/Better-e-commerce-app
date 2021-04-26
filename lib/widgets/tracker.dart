@@ -14,24 +14,24 @@ class TrackerState extends State<Tracker> {
   List<Step> steps = [
     Step(
       title: Text('The order placed'),
-      content: Text('Location'),
+      content: Text('Location\n01/20/21\n1:30'),
       state: StepState.complete,
       isActive: false,
     ),
     Step(
       title: Text('The order shipped'),
-      content: Text('Location'),
+      content: Text('Location\n03/20/21\n2:15'),
       state: StepState.complete,
       isActive: false,
     ),
     Step(
       title: Text('The order out for delivery'),
-      content: Text('Location'),
+      content: Text('Location\n06/20/21\n11:30'),
       isActive: true,
     ),
     Step(
       title: Text('The order delivered'),
-      content: Text('Location'),
+      content: Text('Locationn\n06/20/21\n12:30'),
       isActive: false,
     ),
   ];
