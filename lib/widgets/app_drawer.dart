@@ -90,6 +90,7 @@ class AppDrawer extends StatelessWidget {
             Menu(
               assetName: 'search',
               label: 'SEARCH',
+              navigator: '/search-screen',
             ),
             Menu(
               label: 'ORDER TRACKING',
