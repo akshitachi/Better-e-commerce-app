@@ -13,6 +13,7 @@ import './widgets/nav_bar.dart';
 import './screens/after_signup_screen.dart';
 import './screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import './screens/profile_screen.dart';
 
 void main() {
   runApp(
@@ -41,7 +42,8 @@ class MyApp extends StatelessWidget {
         '/sign-up': (ctx) => SignUpScreen(),
         '/sign-in': (ctx) => AuthScreen(),
         '/after-signup': (ctx) => AfterSignUp(),
-        '/forgot-password':(ctx)=>ForgotPassword(),
+        '/forgot-password': (ctx) => ForgotPassword(),
+        '/profile-screen': (ctx) => ProfileScreen(),
       },
     );
   }

@@ -16,11 +16,18 @@ class AppDrawer extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.all(12.0),
                   child: ListTile(
-                    leading: CircleAvatar(
-                      radius: 18,
-                      backgroundImage:
-                          ExactAssetImage('assets/images/Group 323.png'),
-                      backgroundColor: Color(0xff2799FA),
+                    leading: FlatButton(
+                      onPressed: () {
+                        Navigator.of(context).pushNamed(
+                          '/profile-screen',
+                        );
+                      },
+                      child: CircleAvatar(
+                        radius: 18,
+                        backgroundImage:
+                            ExactAssetImage('assets/images/Group 323.png'),
+                        backgroundColor: Color(0xff2799FA),
+                      ),
                     ),
                     title: Text(
                       'Jennifer',
