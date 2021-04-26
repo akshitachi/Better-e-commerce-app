@@ -199,20 +199,6 @@ class _SignUpState extends State<SignUp> {
                         ),
                       ),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        FlatButton(
-                          onPressed: () {},
-                          child: Text(
-                            'forgot password',
-                            style: TextStyle(
-                              fontSize: 12,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
                     Padding(
                       padding: EdgeInsets.all(16),
                       child: Center(

@@ -205,7 +205,12 @@ class _AuthFormState extends State<AuthForm> {
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               FlatButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                    context,
+                                    '/forgot-password',
+                                  );
+                                },
                                 child: Text(
                                   'forgot password',
                                   style: TextStyle(

@@ -1,6 +1,7 @@
 import 'package:e_commerce2/screens/auth_screen.dart';
 import 'package:e_commerce2/screens/cart_screen.dart';
 import 'package:e_commerce2/screens/feedback_screen.dart';
+import 'package:e_commerce2/screens/forgot_password_screen.dart';
 import 'package:e_commerce2/screens/signup_screen.dart';
 
 import './screens/first_page.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         '/sign-up': (ctx) => SignUpScreen(),
         '/sign-in': (ctx) => AuthScreen(),
         '/after-signup': (ctx) => AfterSignUp(),
+        '/forgot-password':(ctx)=>ForgotPassword(),
       },
     );
   }
