@@ -15,10 +15,12 @@ class _AuthScreenState extends State<AuthScreen> {
     String password,
     BuildContext ctx,
   ) async {
-    UserCredential authResult;
+    AuthResult authResult;
     try {
       authResult = await _auth.signInWithEmailAndPassword(
-          email: email, password: password);
+        email: email,
+        password: password,
+      );
     } on PlatformException catch (err) {
       var message = 'An error occured, please check your credentials!';
       if (err.message != null) {

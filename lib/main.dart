@@ -9,7 +9,7 @@ import './screens/notification_screen.dart';
 import './screens/settings_screen.dart';
 import './screens/privacy_policy_page.dart';
 import './widgets/nav_bar.dart';
-
+import './screens/after_signup_screen.dart';
 import './screens/home_screen.dart';
 import 'package:flutter/material.dart';
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LogOutScreen extends StatelessWidget {
   final String routeName = '/logout';
@@ -45,7 +46,8 @@ class LogOutScreen extends StatelessWidget {
                 height: 50,
                 child: RaisedButton(
                   onPressed: () {
-                    Navigator.of(context).pop();
+                    FirebaseAuth.instance.signOut();
+                    Navigator.of(context).pushReplacementNamed('/sign-up');
                   },
                   child: Text(
                     'Log out',

@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 class SignUp extends StatefulWidget {
-  SignUp({Key key}) : super(key: key);
+  SignUp(this.submitFn);
+  final void Function(
+    String email,
+    String password,
+    BuildContext ctx,
+  ) submitFn;
 
   @override
   _SignUpState createState() => _SignUpState();
@@ -9,6 +14,7 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   final _formKey = GlobalKey<FormState>();
+  final _passwordController = TextEditingController();
 
   String _userEmail = '';
   String _userPassword = '';
@@ -17,6 +23,11 @@ class _SignUpState extends State<SignUp> {
     FocusScope.of(context).unfocus();
     if (isValid) {
       _formKey.currentState.save();
+      widget.submitFn(
+        _userEmail.trim(),
+        _userPassword.trim(),
+        context,
+      );
     }
   }
 
@@ -117,6 +128,7 @@ class _SignUpState extends State<SignUp> {
                       elevation: 5,
                       shadowColor: Colors.grey,
                       child: TextFormField(
+                        controller: _passwordController,
                         validator: (value) {
                           if (value.isEmpty || value.length < 7) {
                             return 'Password must be atleast 7 characters long';
@@ -149,6 +161,11 @@ class _SignUpState extends State<SignUp> {
                       elevation: 5,
                       shadowColor: Colors.grey,
                       child: TextFormField(
+                        validator: (value) {
+                          if (value != _passwordController.text) {
+                            return 'Passwords do not match!';
+                          }
+                        },
                         obscureText: true,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -249,9 +266,12 @@ class _SignUpState extends State<SignUp> {
                         width: double.infinity,
                         height: 50,
                         child: RaisedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context)
+                                .pushReplacementNamed('/sign-in');
+                          },
                           child: Text(
-                            'SignUp',
+                            'SignIn',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 20,

@@ -1,7 +1,8 @@
-import 'package:e_commerce2/widgets/auth_form.dart';
 import 'package:e_commerce2/widgets/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -13,10 +14,34 @@ class _SignUpScreenState extends State<SignUpScreen> {
   void _submitAuthForm(
     String email,
     String password,
+    BuildContext ctx,
   ) async {
-    UserCredential authResult;
-    authResult = await _auth.createUserWithEmailAndPassword(
-        email: email, password: password);
+    AuthResult authResult;
+    try {
+      authResult = await _auth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      await Firestore.instance
+          .collection('users')
+          .document(authResult.user.uid)
+          .setData(
+        {
+          'email': email,
+        },
+      );
+    } on PlatformException catch (err) {
+      var message = 'An error occured, please check your credentials!';
+      if (err.message != null) {
+        message = err.message;
+      }
+      Scaffold.of(ctx).showSnackBar(
+        SnackBar(
+          content: Text(message),
+          backgroundColor: Theme.of(ctx).errorColor,
+        ),
+      );
+    }
   }
 
   final routeName = '/sign-up';
@@ -24,7 +49,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: SignUp(),
+        body: SignUp(
+          _submitAuthForm,
+        ),
       ),
     );
   }
