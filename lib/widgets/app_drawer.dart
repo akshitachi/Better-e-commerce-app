@@ -99,6 +99,7 @@ class AppDrawer extends StatelessWidget {
             ),
             Menu(
               label: 'CHANGE PASSWORD',
+              navigator: '/change-password',
             ),
             Menu(
               label: 'LOG OUT',
