@@ -170,7 +170,7 @@ class OrdersScreen extends StatelessWidget {
                 height: 50,
                 child: RaisedButton(
                   onPressed: () {
-                    Navigator.of(context).pop();
+                    Navigator.of(context).pushReplacementNamed('/home-screen');
                   },
                   child: Text(
                     'Cancel your Order',

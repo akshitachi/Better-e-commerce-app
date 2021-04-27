@@ -25,7 +25,7 @@ class _PriceRangeState extends State<PriceRange> {
             ),
             child: GestureDetector(
               onTap: () {
-                Navigator.of(context).pop();
+                Navigator.of(context).pushReplacementNamed('/home-screen');
               },
               child: Icon(
                 Icons.check,

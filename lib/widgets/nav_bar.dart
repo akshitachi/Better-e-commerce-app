@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import '../screens/orders_screen.dart';
 import '../screens/search_screen.dart';
+import '../screens/price_range.dart';
 
 class NavBar extends StatefulWidget {
   @override
@@ -42,7 +43,7 @@ class _NavBarState extends State<NavBar> {
           },
           children: <Widget>[
             HomeScreen(),
-            HomeScreen(),
+            PriceRange(),
             SearchScreen(),
             OrdersScreen(),
             ProfileScreen(),
