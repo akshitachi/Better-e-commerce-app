@@ -83,7 +83,10 @@ class _CartScreenState extends State<CartScreen> {
                   width: double.infinity,
                   height: 40,
                   child: RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushReplacementNamed('/orders-screen');
+                    },
                     child: Text(
                       'Check out',
                       style: TextStyle(

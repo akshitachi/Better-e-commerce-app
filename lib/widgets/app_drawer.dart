@@ -71,6 +71,7 @@ class AppDrawer extends StatelessWidget {
             Menu(
               assetName: 'Path 148',
               label: 'YOUR ORDERS',
+              navigator: '/orders-screen',
             ),
             Menu(
               assetName: 'Icon feather-shopping-cart',

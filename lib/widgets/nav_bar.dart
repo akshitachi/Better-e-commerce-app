@@ -2,7 +2,7 @@ import 'package:e_commerce2/screens/home_screen.dart';
 import 'package:e_commerce2/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
-import '../screens/wallet_screen.dart';
+import '../screens/orders_screen.dart';
 import '../screens/search_screen.dart';
 
 class NavBar extends StatefulWidget {
@@ -42,9 +42,9 @@ class _NavBarState extends State<NavBar> {
           },
           children: <Widget>[
             HomeScreen(),
-            WalletScreen(),
-            SearchScreen(),
             HomeScreen(),
+            SearchScreen(),
+            OrdersScreen(),
             ProfileScreen(),
           ],
         ),

@@ -16,12 +16,14 @@ import 'package:flutter/material.dart';
 import './screens/profile_screen.dart';
 import './screens/order_tracking_screen.dart';
 import 'package:device_preview/device_preview.dart';
+import './screens/orders_screen.dart';
 
 void main() {
   runApp(
-    DevicePreview(
-      builder: (context) => MyApp(),
-    ),
+    // DevicePreview(
+    //   builder: (context) =>
+    MyApp(),
+    // ),
   );
 }
 
@@ -51,6 +53,7 @@ class MyApp extends StatelessWidget {
         '/wallet-screen': (ctx) => WalletScreen(),
         '/search-screen': (ctx) => SearchScreen(),
         '/order-tracking': (ctx) => OrderTrackingScreen(),
+        '/orders-screen': (ctx) => OrdersScreen(),
       },
     );
   }
