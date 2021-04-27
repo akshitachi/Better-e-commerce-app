@@ -8,9 +8,12 @@ class PriceRange extends StatefulWidget {
 }
 
 class _PriceRangeState extends State<PriceRange> {
-  RangeLabels labels = RangeLabels('100', '1000');
+  RangeLabels labels = RangeLabels('10', "101");
   final String routeName = '/price-range';
-  RangeValues values = RangeValues(1, 100);
+  String _chosenValue;
+  String _chosenValue1;
+  String _chosenValue2;
+  RangeValues values = RangeValues(10, 101);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,12 +66,11 @@ class _PriceRangeState extends State<PriceRange> {
                 divisions: 5,
                 activeColor: Colors.blue,
                 inactiveColor: Colors.grey,
-                min: 1,
-                max: 100,
+                min: 0,
+                max: 101,
                 values: values,
                 labels: labels,
                 onChanged: (value) {
-                  print("START: ${value.start}, End: ${value.end}");
                   setState(() {
                     values = value;
                     labels = RangeLabels("${value.start.toInt().toString()}\$",
@@ -95,6 +97,96 @@ class _PriceRangeState extends State<PriceRange> {
                 ),
               ],
             ),
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 130,
+                    child: DropdownButtonFormField<String>(
+                      focusColor: Colors.white,
+                      itemHeight: 50,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                      value: _chosenValue,
+                      //elevation: 5,
+                      style: TextStyle(color: Colors.white),
+                      iconEnabledColor: Colors.black,
+                      items: <String>[
+                        'Extra Small',
+                        'Small',
+                        'Medium',
+                        'Large',
+                      ].map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(
+                            value,
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        );
+                      }).toList(),
+                      hint: Text(
+                        "Range",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      onChanged: (String value1) {
+                        setState(() {
+                          _chosenValue = value1;
+                        });
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    width: 40,
+                  ),
+                  SizedBox(
+                    width: 130,
+                    child: DropdownButtonFormField<String>(
+                      focusColor: Colors.blue,
+                      itemHeight: 50,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.blue,
+                          ),
+                        ),
+                      ),
+                      value: _chosenValue1,
+                      items: <String>[
+                        'Medium',
+                        'Large',
+                        'Extra Large',
+                      ].map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(
+                            value,
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        );
+                      }).toList(),
+                      hint: Text(
+                        "Range",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      onChanged: (String value) {
+                        setState(() {
+                          _chosenValue1 = value;
+                        });
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.03,
             ),
@@ -111,6 +203,58 @@ class _PriceRangeState extends State<PriceRange> {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.02,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    width: 130,
+                    child: DropdownButtonFormField<String>(
+                      focusColor: Colors.blue,
+                      itemHeight: 50,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.blue,
+                          ),
+                        ),
+                      ),
+                      value: _chosenValue2,
+                      items: <String>[
+                        'Zara',
+                        'Skechers',
+                        'Puma',
+                        'Nike',
+                      ].map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(
+                            value,
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        );
+                      }).toList(),
+                      hint: Text(
+                        "Brands",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      onChanged: (String value) {
+                        setState(() {
+                          _chosenValue2 = value;
+                        });
+                      },
+                    ),
                   ),
                 ),
               ],
