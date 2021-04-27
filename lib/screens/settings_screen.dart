@@ -141,7 +141,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   width: double.infinity,
                   height: 50,
                   child: RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushReplacementNamed('/edit-profile');
+                    },
                     child: Text(
                       'Edit Profile',
                       style: TextStyle(

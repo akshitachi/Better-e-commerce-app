@@ -28,6 +28,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   device_preview: any
   firebase_auth: ^0.16.1
+  image_picker: any
 
 dev_dependencies:
   flutter_test:

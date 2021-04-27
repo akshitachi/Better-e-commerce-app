@@ -19,6 +19,8 @@ import 'package:device_preview/device_preview.dart';
 import './screens/orders_screen.dart';
 import './screens/change_password_screen.dart';
 import './screens/price_range.dart';
+import './screens/edit_profile_screen.dart';
+import './screens/payment_screen.dart';
 
 void main() {
   runApp(
@@ -56,8 +58,10 @@ class MyApp extends StatelessWidget {
         '/search-screen': (ctx) => SearchScreen(),
         '/order-tracking': (ctx) => OrderTrackingScreen(),
         '/orders-screen': (ctx) => OrdersScreen(),
-        '/change-password':(ctx)=>ChangePasswordScreen(),
-        '/price-range':(ctx)=>PriceRange(),
+        '/change-password': (ctx) => ChangePasswordScreen(),
+        '/price-range': (ctx) => PriceRange(),
+        '/edit-profile': (ctx) => EditProfile(),
+        '/payment': (ctx) => PaymentScreen(),
       },
     );
   }

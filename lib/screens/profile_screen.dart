@@ -50,7 +50,9 @@ class ProfileScreen extends StatelessWidget {
                     icon: Icon(
                       Icons.edit,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('/edit-profile');
+                    },
                   ),
                 ),
                 Positioned(
