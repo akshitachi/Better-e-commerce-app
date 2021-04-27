@@ -18,6 +18,7 @@ import './screens/order_tracking_screen.dart';
 import 'package:device_preview/device_preview.dart';
 import './screens/orders_screen.dart';
 import './screens/change_password_screen.dart';
+import './screens/price_range.dart';
 
 void main() {
   runApp(
@@ -56,6 +57,7 @@ class MyApp extends StatelessWidget {
         '/order-tracking': (ctx) => OrderTrackingScreen(),
         '/orders-screen': (ctx) => OrdersScreen(),
         '/change-password':(ctx)=>ChangePasswordScreen(),
+        '/price-range':(ctx)=>PriceRange(),
       },
     );
   }

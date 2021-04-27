@@ -57,7 +57,9 @@ class _NameCardState extends State<NameCard> {
                   Icons.menu,
                   color: Colors.white,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/price-range');
+                },
               ),
             ],
           ),
