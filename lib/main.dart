@@ -21,6 +21,7 @@ import './screens/change_password_screen.dart';
 import './screens/price_range.dart';
 import './screens/edit_profile_screen.dart';
 import './screens/payment_screen.dart';
+import './screens/order_placed_screen.dart';
 
 void main() {
   runApp(
@@ -62,6 +63,7 @@ class MyApp extends StatelessWidget {
         '/price-range': (ctx) => PriceRange(),
         '/edit-profile': (ctx) => EditProfile(),
         '/payment': (ctx) => PaymentScreen(),
+        '/order-placed': (ctx) => OrderPlaced(),
       },
     );
   }
